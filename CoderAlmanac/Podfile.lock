@@ -1,0 +1,31 @@
+PODS:
+  - Appirater (2.0.2)
+  - BlocksKit (2.0.0):
+    - BlocksKit/All
+  - BlocksKit/All (2.0.0):
+    - BlocksKit/Core
+    - BlocksKit/DynamicDelegate
+    - BlocksKit/MessageUI
+    - BlocksKit/UIKit
+  - BlocksKit/Core (2.0.0)
+  - BlocksKit/DynamicDelegate (2.0.0):
+    - libffi
+  - BlocksKit/MessageUI (2.0.0):
+    - BlocksKit/DynamicDelegate
+  - BlocksKit/UIKit (2.0.0):
+    - BlocksKit/DynamicDelegate
+  - libffi (3.0.13)
+  - MBProgressHUD (0.8)
+
+DEPENDENCIES:
+  - Appirater
+  - BlocksKit
+  - MBProgressHUD
+
+SPEC CHECKSUMS:
+  Appirater: 32fb9089615b5e542c7ad7b5749741a8aed55290
+  BlocksKit: b29ee3f28ba06a09f5c64987314ce5b75b2c3962
+  libffi: 64ef39353e747bb2b25e1026afd96a157bf9231c
+  MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
+
+COCOAPODS: 0.29.0
