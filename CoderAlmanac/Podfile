@@ -5,3 +5,5 @@ pod 'BlocksKit'
 pod 'MBProgressHUD'
 
 pod 'Appirater'
+
+pod 'JSONKit', :head

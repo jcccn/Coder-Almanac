@@ -14,17 +14,20 @@ PODS:
     - BlocksKit/DynamicDelegate
   - BlocksKit/UIKit (2.0.0):
     - BlocksKit/DynamicDelegate
+  - JSONKit (HEAD based on 1.5pre)
   - libffi (3.0.13)
   - MBProgressHUD (0.8)
 
 DEPENDENCIES:
   - Appirater
   - BlocksKit
+  - JSONKit (HEAD)
   - MBProgressHUD
 
 SPEC CHECKSUMS:
   Appirater: 32fb9089615b5e542c7ad7b5749741a8aed55290
   BlocksKit: b29ee3f28ba06a09f5c64987314ce5b75b2c3962
+  JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
   libffi: 64ef39353e747bb2b25e1026afd96a157bf9231c
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
 

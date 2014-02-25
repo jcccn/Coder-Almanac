@@ -16,7 +16,7 @@
 		90EEBA4E18BB741400C0183D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EEBA4D18BB741400C0183D /* AppDelegate.m */; };
 		90EEBA5118BB741400C0183D /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90EEBA4F18BB741400C0183D /* Main_iPhone.storyboard */; };
 		90EEBA5418BB741400C0183D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90EEBA5218BB741400C0183D /* Main_iPad.storyboard */; };
-		90EEBA5718BB741400C0183D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EEBA5618BB741400C0183D /* ViewController.m */; };
+		90EEBA5718BB741400C0183D /* AlmanacViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EEBA5618BB741400C0183D /* AlmanacViewController.m */; };
 		90EEBA6018BB741400C0183D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EEBA5F18BB741400C0183D /* XCTest.framework */; };
 		90EEBA6118BB741400C0183D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EEBA3D18BB741400C0183D /* Foundation.framework */; };
 		90EEBA6218BB741400C0183D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EEBA4118BB741400C0183D /* UIKit.framework */; };
@@ -70,8 +70,8 @@
 		90EEBA4D18BB741400C0183D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		90EEBA5018BB741400C0183D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		90EEBA5318BB741400C0183D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		90EEBA5518BB741400C0183D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		90EEBA5618BB741400C0183D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		90EEBA5518BB741400C0183D /* AlmanacViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlmanacViewController.h; sourceTree = "<group>"; };
+		90EEBA5618BB741400C0183D /* AlmanacViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlmanacViewController.m; sourceTree = "<group>"; };
 		90EEBA5E18BB741400C0183D /* CoderAlmanacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoderAlmanacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90EEBA5F18BB741400C0183D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		90EEBA6718BB741400C0183D /* CoderAlmanacTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoderAlmanacTests-Info.plist"; sourceTree = "<group>"; };
@@ -171,8 +171,8 @@
 				90EEBA4D18BB741400C0183D /* AppDelegate.m */,
 				90EEBA4F18BB741400C0183D /* Main_iPhone.storyboard */,
 				90EEBA5218BB741400C0183D /* Main_iPad.storyboard */,
-				90EEBA5518BB741400C0183D /* ViewController.h */,
-				90EEBA5618BB741400C0183D /* ViewController.m */,
+				90EEBA5518BB741400C0183D /* AlmanacViewController.h */,
+				90EEBA5618BB741400C0183D /* AlmanacViewController.m */,
 				90EEBA7918BB87DE00C0183D /* Resources */,
 				90EEBA4418BB741400C0183D /* Supporting Files */,
 			);
@@ -414,7 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90EEBA5718BB741400C0183D /* ViewController.m in Sources */,
+				90EEBA5718BB741400C0183D /* AlmanacViewController.m in Sources */,
 				90EEBA4E18BB741400C0183D /* AppDelegate.m in Sources */,
 				90EEBA4A18BB741400C0183D /* main.m in Sources */,
 			);

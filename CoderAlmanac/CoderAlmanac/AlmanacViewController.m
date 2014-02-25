@@ -1,23 +1,26 @@
 //
-//  ViewController.m
+//  AlmanacViewController.m
 //  CoderAlmanac
 //
 //  Created by Jiang Chuncheng on 2/24/14.
 //  Copyright (c) 2014 SenseForce. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "AlmanacViewController.h"
 
-@interface ViewController ()
+@interface AlmanacViewController ()
 
 @end
 
-@implementation ViewController
+@implementation AlmanacViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.navigationController.navigationBar.translucent =NO;
+	
+    self.title = @"程序员老黄历";
 }
 
 - (void)didReceiveMemoryWarning
