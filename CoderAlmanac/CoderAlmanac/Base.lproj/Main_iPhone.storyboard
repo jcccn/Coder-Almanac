@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" initialViewController="IPd-aE-8Ep">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" initialViewController="IPd-aE-8Ep">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
@@ -89,6 +89,16 @@
                         <inset key="insetFor6xAndEarlier" minX="0.0" minY="20" maxX="0.0" maxY="0.0"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ln3-yo-f8u"/>
+                    <connections>
+                        <outlet property="badContentLabel" destination="jXV-zo-xoE" id="NiP-IW-anr"/>
+                        <outlet property="badTitleLabel" destination="Z34-p5-zeh" id="lCk-pe-EBz"/>
+                        <outlet property="badView" destination="Kyw-Yl-gTh" id="WaQ-Fa-Wrr"/>
+                        <outlet property="dateLabel" destination="AWm-In-Snd" id="0R6-WQ-hHf"/>
+                        <outlet property="goodContentLabel" destination="poG-5v-FNP" id="Zvv-4G-iJQ"/>
+                        <outlet property="goodTitleLabel" destination="Cdi-iY-EdO" id="rVd-Pq-1Ra"/>
+                        <outlet property="goodView" destination="ejg-Rc-bcg" id="yVy-eY-A2N"/>
+                        <outlet property="otherInfoLabel" destination="Oqo-Y2-qSh" id="vPZ-EV-EHW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
