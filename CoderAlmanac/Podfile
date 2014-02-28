@@ -7,3 +7,5 @@ pod 'MBProgressHUD'
 pod 'Appirater'
 
 pod 'JSONKit', :head
+
+pod 'RETableViewManager'

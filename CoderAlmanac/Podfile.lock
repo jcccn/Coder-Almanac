@@ -17,12 +17,18 @@ PODS:
   - JSONKit (HEAD based on 1.5pre)
   - libffi (3.0.13)
   - MBProgressHUD (0.8)
+  - REFormattedNumberField (1.1.2)
+  - RETableViewManager (1.5.9):
+    - REFormattedNumberField (~> 1.1.1)
+    - REValidation (~> 0.1.4)
+  - REValidation (0.1.4)
 
 DEPENDENCIES:
   - Appirater
   - BlocksKit
   - JSONKit (HEAD)
   - MBProgressHUD
+  - RETableViewManager
 
 SPEC CHECKSUMS:
   Appirater: 32fb9089615b5e542c7ad7b5749741a8aed55290
@@ -30,5 +36,8 @@ SPEC CHECKSUMS:
   JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
   libffi: 64ef39353e747bb2b25e1026afd96a157bf9231c
   MBProgressHUD: 2bbc6f470111daf7f3eaa4eb12b8cbf01c4c0622
+  REFormattedNumberField: 57016d59e96dbf5b6281fec4d08b401cb0a3c792
+  RETableViewManager: d737f2e49b7f10841e4d9ee17ea5c10a0ace1054
+  REValidation: 02160035110a63af1bf6ad1b8791837b3fa13584
 
 COCOAPODS: 0.29.0

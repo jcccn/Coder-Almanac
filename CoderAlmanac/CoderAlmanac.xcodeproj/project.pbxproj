@@ -50,6 +50,13 @@
 		908228B618C0C74F00A8281D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908228AC18C0C74F00A8281D /* Security.framework */; };
 		908228B718C0C74F00A8281D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908228AD18C0C74F00A8281D /* SystemConfiguration.framework */; };
 		908228BD18C0D75600A8281D /* IAdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 908228BC18C0D75600A8281D /* IAdManager.m */; };
+		908228C518C0DD8B00A8281D /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908228BE18C0DD8B00A8281D /* OptionsViewController.m */; };
+		908228C618C0DD8B00A8281D /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908228C018C0DD8B00A8281D /* AboutViewController.m */; };
+		908228C718C0DD8B00A8281D /* FaqViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908228C218C0DD8B00A8281D /* FaqViewController.m */; };
+		908228C818C0DD8B00A8281D /* AboutAdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 908228C418C0DD8B00A8281D /* AboutAdViewController.m */; };
+		908228CE18C0DF6600A8281D /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 908228CB18C0DF6600A8281D /* about.html */; };
+		908228CF18C0DF6600A8281D /* about_ad.html in Resources */ = {isa = PBXBuildFile; fileRef = 908228CC18C0DF6600A8281D /* about_ad.html */; };
+		908228D018C0DF6600A8281D /* faq.html in Resources */ = {isa = PBXBuildFile; fileRef = 908228CD18C0DF6600A8281D /* faq.html */; };
 		90EEBA3E18BB741400C0183D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EEBA3D18BB741400C0183D /* Foundation.framework */; };
 		90EEBA4018BB741400C0183D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EEBA3F18BB741400C0183D /* CoreGraphics.framework */; };
 		90EEBA4218BB741400C0183D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EEBA4118BB741400C0183D /* UIKit.framework */; };
@@ -153,6 +160,17 @@
 		908228B918C0C7B200A8281D /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		908228BB18C0D75600A8281D /* IAdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IAdManager.h; sourceTree = "<group>"; };
 		908228BC18C0D75600A8281D /* IAdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IAdManager.m; sourceTree = "<group>"; };
+		908228BE18C0DD8B00A8281D /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsViewController.m; sourceTree = "<group>"; };
+		908228BF18C0DD8B00A8281D /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		908228C018C0DD8B00A8281D /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		908228C118C0DD8B00A8281D /* FaqViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaqViewController.h; sourceTree = "<group>"; };
+		908228C218C0DD8B00A8281D /* FaqViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaqViewController.m; sourceTree = "<group>"; };
+		908228C318C0DD8B00A8281D /* AboutAdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutAdViewController.h; sourceTree = "<group>"; };
+		908228C418C0DD8B00A8281D /* AboutAdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutAdViewController.m; sourceTree = "<group>"; };
+		908228C918C0DD9C00A8281D /* OptionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OptionsViewController.h; sourceTree = "<group>"; };
+		908228CB18C0DF6600A8281D /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
+		908228CC18C0DF6600A8281D /* about_ad.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about_ad.html; sourceTree = "<group>"; };
+		908228CD18C0DF6600A8281D /* faq.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = faq.html; sourceTree = "<group>"; };
 		90EEBA3A18BB741400C0183D /* CoderAlmanac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoderAlmanac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90EEBA3D18BB741400C0183D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		90EEBA3F18BB741400C0183D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -421,6 +439,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		908228CA18C0DF6600A8281D /* Html */ = {
+			isa = PBXGroup;
+			children = (
+				908228CB18C0DF6600A8281D /* about.html */,
+				908228CC18C0DF6600A8281D /* about_ad.html */,
+				908228CD18C0DF6600A8281D /* faq.html */,
+			);
+			path = Html;
+			sourceTree = "<group>";
+		};
 		90EEBA3118BB741400C0183D = {
 			isa = PBXGroup;
 			children = (
@@ -466,12 +494,12 @@
 		90EEBA4318BB741400C0183D /* CoderAlmanac */ = {
 			isa = PBXGroup;
 			children = (
-				90F815BA18BE3860007D943D /* Models */,
-				90F815BB18BE3860007D943D /* ViewControllers */,
-				908228BA18C0D75600A8281D /* Views */,
-				908228B818C0C7B200A8281D /* Constants */,
 				90EEBA4C18BB741400C0183D /* AppDelegate.h */,
 				90EEBA4D18BB741400C0183D /* AppDelegate.m */,
+				90F815BA18BE3860007D943D /* Models */,
+				908228BA18C0D75600A8281D /* Views */,
+				90F815BB18BE3860007D943D /* ViewControllers */,
+				908228B818C0C7B200A8281D /* Constants */,
 				90EEBA4F18BB741400C0183D /* Main_iPhone.storyboard */,
 				90EEBA5218BB741400C0183D /* Main_iPad.storyboard */,
 				9082280018C0C54300A8281D /* External */,
@@ -514,6 +542,7 @@
 			isa = PBXGroup;
 			children = (
 				90EEBAAD18BBAA0400C0183D /* Data */,
+				908228CA18C0DF6600A8281D /* Html */,
 				90EEBA7A18BB87DE00C0183D /* Images */,
 			);
 			path = Resources;
@@ -570,6 +599,14 @@
 			children = (
 				90F815BC18BE3875007D943D /* AlmanacViewController.h */,
 				90F815BD18BE3875007D943D /* AlmanacViewController.m */,
+				908228C918C0DD9C00A8281D /* OptionsViewController.h */,
+				908228BE18C0DD8B00A8281D /* OptionsViewController.m */,
+				908228BF18C0DD8B00A8281D /* AboutViewController.h */,
+				908228C018C0DD8B00A8281D /* AboutViewController.m */,
+				908228C118C0DD8B00A8281D /* FaqViewController.h */,
+				908228C218C0DD8B00A8281D /* FaqViewController.m */,
+				908228C318C0DD8B00A8281D /* AboutAdViewController.h */,
+				908228C418C0DD8B00A8281D /* AboutAdViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -676,6 +713,8 @@
 				9082285818C0C56C00A8281D /* Comment.bundle in Resources */,
 				90EEBAAC18BBA69700C0183D /* Default@2x.png in Resources */,
 				9082288E18C0C56D00A8281D /* ShareSDKiPadDefaultShareViewUI.bundle in Resources */,
+				908228D018C0DF6600A8281D /* faq.html in Resources */,
+				908228CE18C0DF6600A8281D /* about.html in Resources */,
 				90EEBA9018BB87DE00C0183D /* Icon-Small-50@2x.png in Resources */,
 				90EEBA4818BB741400C0183D /* InfoPlist.strings in Resources */,
 				908228A318C0C58E00A8281D /* umFeedback.bundle in Resources */,
@@ -692,6 +731,7 @@
 				90EEBA8E18BB87DE00C0183D /* Icon-76@2x.png in Resources */,
 				90EEBA8D18BB87DE00C0183D /* Icon-76.png in Resources */,
 				90EEBA9218BB87DE00C0183D /* Icon-Small@2x.png in Resources */,
+				908228CF18C0DF6600A8281D /* about_ad.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,8 +786,12 @@
 				90F815C118BE38BA007D943D /* AlmanacKit.m in Sources */,
 				90F815BE18BE3875007D943D /* AlmanacViewController.m in Sources */,
 				90EEBA4E18BB741400C0183D /* AppDelegate.m in Sources */,
+				908228C618C0DD8B00A8281D /* AboutViewController.m in Sources */,
 				90EEBA4A18BB741400C0183D /* main.m in Sources */,
+				908228C818C0DD8B00A8281D /* AboutAdViewController.m in Sources */,
+				908228C718C0DD8B00A8281D /* FaqViewController.m in Sources */,
 				908228BD18C0D75600A8281D /* IAdManager.m in Sources */,
+				908228C518C0DD8B00A8281D /* OptionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
