@@ -46,7 +46,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
@@ -98,6 +98,25 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string></string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wxe577d79c33cb28fe</string>
+				<string>QQ0605944F</string>
+				<string>wb2300527798</string>
+				<string>tencent101028943</string>
+				<string>wb801483015</string>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>
