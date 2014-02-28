@@ -938,6 +938,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A9936800D53C4E8B8917E81B /* Pods.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -962,6 +963,7 @@
 					"\"$(SRCROOT)/CoderAlmanac/External/UMeng-Feedback/UMFeedback\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -970,6 +972,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A9936800D53C4E8B8917E81B /* Pods.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -995,6 +998,7 @@
 					"\"$(SRCROOT)/CoderAlmanac/External/UMeng-Feedback/UMFeedback\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
