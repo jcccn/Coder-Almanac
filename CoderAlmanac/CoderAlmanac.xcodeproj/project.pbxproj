@@ -57,6 +57,7 @@
 		908228CE18C0DF6600A8281D /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 908228CB18C0DF6600A8281D /* about.html */; };
 		908228CF18C0DF6600A8281D /* about_ad.html in Resources */ = {isa = PBXBuildFile; fileRef = 908228CC18C0DF6600A8281D /* about_ad.html */; };
 		908228D018C0DF6600A8281D /* faq.html in Resources */ = {isa = PBXBuildFile; fileRef = 908228CD18C0DF6600A8281D /* faq.html */; };
+		90E377A918C4FABE00A81135 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E377A818C4FABE00A81135 /* Crashlytics.framework */; };
 		90EEBA3E18BB741400C0183D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EEBA3D18BB741400C0183D /* Foundation.framework */; };
 		90EEBA4018BB741400C0183D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EEBA3F18BB741400C0183D /* CoreGraphics.framework */; };
 		90EEBA4218BB741400C0183D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EEBA4118BB741400C0183D /* UIKit.framework */; };
@@ -170,6 +171,7 @@
 		908228CB18C0DF6600A8281D /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		908228CC18C0DF6600A8281D /* about_ad.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about_ad.html; sourceTree = "<group>"; };
 		908228CD18C0DF6600A8281D /* faq.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = faq.html; sourceTree = "<group>"; };
+		90E377A818C4FABE00A81135 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		90EEBA3A18BB741400C0183D /* CoderAlmanac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoderAlmanac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90EEBA3D18BB741400C0183D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		90EEBA3F18BB741400C0183D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -230,6 +232,7 @@
 				9082289C18C0C57B00A8281D /* libMobClickLibrary.a in Frameworks */,
 				9082287918C0C56C00A8281D /* AGCommon.framework in Frameworks */,
 				908228B518C0C74F00A8281D /* CoreTelephony.framework in Frameworks */,
+				90E377A918C4FABE00A81135 /* Crashlytics.framework in Frameworks */,
 				9082287218C0C56C00A8281D /* TencentWeiboConnection.framework in Frameworks */,
 				90EEBA4018BB741400C0183D /* CoreGraphics.framework in Frameworks */,
 				90EEBA4218BB741400C0183D /* UIKit.framework in Frameworks */,
@@ -471,6 +474,7 @@
 		90EEBA3C18BB741400C0183D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				90E377A818C4FABE00A81135 /* Crashlytics.framework */,
 				908228A418C0C74F00A8281D /* iAd.framework */,
 				908228A518C0C74F00A8281D /* libsqlite3.dylib */,
 				908228A618C0C74F00A8281D /* libstdc++.dylib */,
@@ -622,6 +626,7 @@
 				90EEBA3718BB741400C0183D /* Frameworks */,
 				90EEBA3818BB741400C0183D /* Resources */,
 				D74F8C68DBAB447EA8122F06 /* Copy Pods Resources */,
+				90E377A518C4F9E700A81135 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -758,6 +763,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		90E377A518C4F9E700A81135 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run f50cb7b9b7567d2f30ebdf80f5fd3265fb99c509 c640f3afd179f8a3a0a920937367bd6e60fb5a828e88c57b0ef0cad47b30577b";
 		};
 		D74F8C68DBAB447EA8122F06 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -940,12 +958,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/CoderAlmanac/External/ShareSDK/Comment\"",
-					"\"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Connection\"",
-					"\"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Core\"",
-					"\"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Extend/QQConnectSDK\"",
-					"\"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK\"",
-					"\"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/UI\"",
+					"$(SRCROOT)/CoderAlmanac/External/ShareSDK/Comment",
+					"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Connection",
+					"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Core",
+					"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Extend/QQConnectSDK",
+					"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK",
+					"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/UI",
+					"$(SRCROOT)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoderAlmanac/CoderAlmanac-Prefix.pch";
@@ -953,12 +972,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Extend/SinaWeiboSDK\"",
-					"\"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Extend/TencentWeiboSDK\"",
-					"\"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Extend/WeChatSDK\"",
-					"\"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Extend/YiXinSDK\"",
-					"\"$(SRCROOT)/CoderAlmanac/External/UMeng-Analytics/UMAnalytics\"",
-					"\"$(SRCROOT)/CoderAlmanac/External/UMeng-Feedback/UMFeedback\"",
+					"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Extend/SinaWeiboSDK",
+					"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Extend/TencentWeiboSDK",
+					"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Extend/WeChatSDK",
+					"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Extend/YiXinSDK",
+					"$(SRCROOT)/CoderAlmanac/External/UMeng-Analytics/UMAnalytics",
+					"$(SRCROOT)/CoderAlmanac/External/UMeng-Feedback/UMFeedback",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "armv7 armv7s";
@@ -975,12 +994,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/CoderAlmanac/External/ShareSDK/Comment\"",
-					"\"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Connection\"",
-					"\"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Core\"",
-					"\"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Extend/QQConnectSDK\"",
-					"\"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK\"",
-					"\"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/UI\"",
+					"$(SRCROOT)/CoderAlmanac/External/ShareSDK/Comment",
+					"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Connection",
+					"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Core",
+					"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Extend/QQConnectSDK",
+					"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK",
+					"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/UI",
+					"$(SRCROOT)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CoderAlmanac/CoderAlmanac-Prefix.pch";
@@ -988,12 +1008,12 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Extend/SinaWeiboSDK\"",
-					"\"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Extend/TencentWeiboSDK\"",
-					"\"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Extend/WeChatSDK\"",
-					"\"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Extend/YiXinSDK\"",
-					"\"$(SRCROOT)/CoderAlmanac/External/UMeng-Analytics/UMAnalytics\"",
-					"\"$(SRCROOT)/CoderAlmanac/External/UMeng-Feedback/UMFeedback\"",
+					"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Extend/SinaWeiboSDK",
+					"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Extend/TencentWeiboSDK",
+					"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Extend/WeChatSDK",
+					"$(SRCROOT)/CoderAlmanac/External/ShareSDK/ShareSDK/Extend/YiXinSDK",
+					"$(SRCROOT)/CoderAlmanac/External/UMeng-Analytics/UMAnalytics",
+					"$(SRCROOT)/CoderAlmanac/External/UMeng-Feedback/UMFeedback",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "armv7 armv7s";

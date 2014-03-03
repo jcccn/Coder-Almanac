@@ -63,6 +63,15 @@
     
     self.tableViewManager = [[RETableViewManager alloc] initWithTableView:self.tableView];
     RETableViewSection *section = [RETableViewSection section];
+    [section addItem:[RETableViewItem itemWithTitle:@"我是程序媛"
+                                      accessoryType:UITableViewCellAccessoryDisclosureIndicator
+                                   selectionHandler:^(RETableViewItem *item) {
+                                       [item deselectRowAnimated:YES];
+                                       [weakSelf.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
+                                   }]];
+    [self.tableViewManager addSection:section];
+    
+    section = [RETableViewSection section];
     [section addItem:[RETableViewItem itemWithTitle:@"☂ 说问题，提建议"
                                       accessoryType:UITableViewCellAccessoryDisclosureIndicator
                                    selectionHandler:^(RETableViewItem *item) {

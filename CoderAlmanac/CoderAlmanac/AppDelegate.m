@@ -7,7 +7,7 @@
 //
 
 #import <Appirater/Appirater.h>
-
+#import <Crashlytics/Crashlytics.h>
 #import <ShareSDK/ShareSDK.h>
 #import <TencentOpenAPI/QQApiInterface.h>
 #import <TencentOpenAPI/TencentOAuth.h>
@@ -32,7 +32,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    
+    [Crashlytics startWithAPIKey:@"f50cb7b9b7567d2f30ebdf80f5fd3265fb99c509"];
     
     [self configUmeng];
     
