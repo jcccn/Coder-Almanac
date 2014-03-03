@@ -12,6 +12,11 @@
 
 @interface AlmanacKit ()
 
+@property (nonatomic, assign) CGFloat titleSize;
+@property (nonatomic, assign) CGFloat subTitleSize;
+@property (nonatomic, strong) UIColor *titleColor;
+@property (nonatomic, strong) UIColor *subTitleColor;
+
 @property (nonatomic, strong) NSDate *today;
 @property (nonatomic, assign) NSInteger iday;
 @property (nonatomic, assign) NSArray *weeks;
@@ -21,6 +26,9 @@
 @property (nonatomic, assign) NSArray *tools;
 @property (nonatomic, assign) NSArray *varNames;
 @property (nonatomic, assign) NSArray *drinks;
+
+@property (nonatomic, strong) NSMutableArray *goodEvents;
+@property (nonatomic, strong) NSMutableArray *badEvents;
 
 @property (nonatomic, strong) NSMutableString *goodResult;
 @property (nonatomic, strong) NSMutableString *badResult;
@@ -39,6 +47,8 @@
 - (void)addToGood:(AlmanacEvent *)event;
 - (void)addToBad:(AlmanacEvent *)event;
 
+- (void)clean;
+
 @end
 
 
@@ -56,6 +66,19 @@
 - (id)init {
     self = [super init];
     if (self) {
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            self.titleSize = 24.0f;
+            self.subTitleSize = 20.0f;
+        }
+        else {
+            self.titleSize = 16.0f;
+            self.subTitleSize = 12.0f;
+        }
+        self.titleColor = [UIColor blackColor];
+        self.subTitleColor = [UIColor grayColor];
+        
+        self.goodEvents = [NSMutableArray array];
+        self.badEvents = [NSMutableArray array];
         self.goodResult = [NSMutableString string];
         self.badResult = [NSMutableString string];
     }
@@ -63,6 +86,9 @@
 }
 
 - (void)loadJson:(NSString *)jsonString {
+    
+    [self clean];
+    
     NSDictionary *data = [jsonString objectFromJSONString];
     if ( ! [data isKindOfClass:[NSDictionary class]]) {
         return;
@@ -136,8 +162,54 @@
     return [self.goodResult copy];
 }
 
+- (NSAttributedString *)getGoodAttributedString {
+    NSMutableAttributedString *attributedString = [NSMutableAttributedString attributedStringWithString:@""];
+    
+    for (AlmanacEvent *event in self.goodEvents) {
+        NSMutableAttributedString *string = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n", event.name]];
+        [string setFont:[UIFont boldSystemFontOfSize:self.titleSize]];
+        [string setTextColor:self.titleColor];
+        [attributedString appendAttributedString:string];
+        if (event.good) {
+            string = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n\n", event.good]];
+            [string setFont:[UIFont boldSystemFontOfSize:self.subTitleSize]];
+            [string setTextColor:self.subTitleColor];
+            [attributedString appendAttributedString:string];
+        }
+    }
+    
+    OHParagraphStyle* paragraphStyle = [OHParagraphStyle defaultParagraphStyle];
+    paragraphStyle.lineSpacing = 4.0f;
+    [attributedString setParagraphStyle:paragraphStyle];
+    
+    return attributedString;
+}
+
 - (NSString *)getBadString {
     return [self.badResult copy];
+}
+
+- (NSAttributedString *)getBadAttributedString {
+    NSMutableAttributedString *attributedString = [NSMutableAttributedString attributedStringWithString:@""];
+    
+    for (AlmanacEvent *event in self.badEvents) {
+        NSMutableAttributedString *string = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n", event.name]];
+        [string setFont:[UIFont boldSystemFontOfSize:self.titleSize]];
+        [string setTextColor:self.titleColor];
+        [attributedString appendAttributedString:string];
+        if ([event.bad length]) {
+            string = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n\n", event.bad]];
+            [string setFont:[UIFont boldSystemFontOfSize:self.subTitleSize]];
+            [string setTextColor:self.subTitleColor];
+            [attributedString appendAttributedString:string];
+        }
+    }
+    
+    OHParagraphStyle* paragraphStyle = [OHParagraphStyle defaultParagraphStyle];
+    paragraphStyle.lineSpacing = 4.0f;
+    [attributedString setParagraphStyle:paragraphStyle];
+    
+    return attributedString;
 }
 
 - (NSString *)getDirectionString {
@@ -309,12 +381,28 @@
 
 // 添加到“宜”
 - (void)addToGood:(AlmanacEvent *)event {
-    [self.goodResult appendFormat:@"%@%@%@\n", event.name, ([event.good length] ? @"：": @""), event.good];
+    if (event) {
+        [self.goodEvents addObject:event];
+        [self.goodResult appendFormat:@"%@%@%@\n", event.name, ([event.good length] ? @"：": @""), event.good];
+    }
 }
 
 // 添加到“不宜”
 - (void)addToBad:(AlmanacEvent *)event {
-    [self.badResult appendFormat:@"%@%@%@\n", event.name, ([event.bad length] ? @"：": @""), event.bad];
+    if (event) {
+        [self.badEvents addObject:event];
+        [self.badResult appendFormat:@"%@%@%@\n", event.name, ([event.bad length] ? @"：": @""), event.bad];
+    }
+}
+
+- (void)clean {
+    [self.goodEvents removeAllObjects];
+    [self.goodResult setString:@""];
+    [self.badEvents removeAllObjects];
+    [self.badResult setString:@""];
+    self.directionResult = @"";
+    self.drinkResult = @"";
+    self.starResult = 3;
 }
 
 @end

@@ -22,10 +22,10 @@
 @property (nonatomic, weak) IBOutlet UILabel *dateLabel;
 @property (nonatomic, weak) IBOutlet UIView *goodView;
 @property (nonatomic, weak) IBOutlet UILabel *goodTitleLabel;
-@property (nonatomic, weak) IBOutlet UILabel *goodContentLabel;
+@property (nonatomic, weak) IBOutlet OHAttributedLabel *goodContentLabel;
 @property (nonatomic, weak) IBOutlet UIView *badView;
 @property (nonatomic, weak) IBOutlet UILabel *badTitleLabel;
-@property (nonatomic, weak) IBOutlet UILabel *badContentLabel;
+@property (nonatomic, weak) IBOutlet OHAttributedLabel *badContentLabel;
 @property (nonatomic, weak) IBOutlet UILabel *otherInfoLabel;
 
 - (IBAction)showMoreOptions:(id)sender;
@@ -51,8 +51,10 @@
                                                                            error:NULL]];
         dispatch_sync(dispatch_get_main_queue(), ^{
             self.dateLabel.text = [[AlmanacKit sharedInstance] getTodayString];
-            self.goodContentLabel.text = [[AlmanacKit sharedInstance] getGoodString];
-            self.badContentLabel.text = [[AlmanacKit sharedInstance] getBadString];
+            self.goodContentLabel.centerVertically = YES;
+            self.goodContentLabel.attributedText = [[AlmanacKit sharedInstance] getGoodAttributedString];
+            self.badContentLabel.centerVertically = YES;
+            self.badContentLabel.attributedText = [[AlmanacKit sharedInstance] getBadAttributedString];
             self.otherInfoLabel.text = [NSString stringWithFormat:@"%@\n%@\n%@",
                                         [[AlmanacKit sharedInstance] getDirectionString],
                                         [[AlmanacKit sharedInstance] getDrinkString],

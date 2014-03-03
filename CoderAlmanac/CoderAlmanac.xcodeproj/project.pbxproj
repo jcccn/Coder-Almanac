@@ -70,7 +70,6 @@
 		90EEBA6218BB741400C0183D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EEBA4118BB741400C0183D /* UIKit.framework */; };
 		90EEBA6A18BB741400C0183D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 90EEBA6818BB741400C0183D /* InfoPlist.strings */; };
 		90EEBA6C18BB741400C0183D /* CoderAlmanacTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 90EEBA6B18BB741400C0183D /* CoderAlmanacTests.m */; };
-		90EEBA7818BB878000C0183D /* CoderAlmanac-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90EEBA4518BB741400C0183D /* CoderAlmanac-Info.plist */; };
 		90EEBA8918BB87DE00C0183D /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = 90EEBA7B18BB87DE00C0183D /* Icon-60.png */; };
 		90EEBA8A18BB87DE00C0183D /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 90EEBA7C18BB87DE00C0183D /* Icon-60@2x.png */; };
 		90EEBA8B18BB87DE00C0183D /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 90EEBA7D18BB87DE00C0183D /* Icon-72.png */; };
@@ -702,7 +701,6 @@
 				9082289318C0C56D00A8281D /* ShareSDKiPhoneDefaultShareViewUI.bundle in Resources */,
 				90EEBA9318BB87DE00C0183D /* Icon-Spotlight-40.png in Resources */,
 				90EEBA8918BB87DE00C0183D /* Icon-60.png in Resources */,
-				90EEBA7818BB878000C0183D /* CoderAlmanac-Info.plist in Resources */,
 				90EEBA8F18BB87DE00C0183D /* Icon-Small-50.png in Resources */,
 				90EEBA9118BB87DE00C0183D /* Icon-Small.png in Resources */,
 				90EEBA8C18BB87DE00C0183D /* Icon-72@2x.png in Resources */,

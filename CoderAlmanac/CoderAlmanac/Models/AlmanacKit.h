@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <OHAttributedLabel/OHAttributedLabel.h>
 
 @class AlmanacEvent;
 @class AlmanacSpecial;
@@ -19,7 +20,9 @@
 
 - (NSString *)getTodayString;
 - (NSString *)getGoodString;
+- (NSAttributedString *)getGoodAttributedString;
 - (NSString *)getBadString;
+- (NSAttributedString *)getBadAttributedString;
 - (NSString *)getDirectionString;
 - (NSString *)getDrinkString;
 - (NSString *)getStarString;
