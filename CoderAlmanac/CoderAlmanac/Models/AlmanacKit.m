@@ -165,16 +165,25 @@
 - (NSAttributedString *)getGoodAttributedString {
     NSMutableAttributedString *attributedString = [NSMutableAttributedString attributedStringWithString:@""];
     
-    for (AlmanacEvent *event in self.goodEvents) {
+    for (NSInteger index = 0, count = [self.goodEvents count]; index < count; index ++) {
+        AlmanacEvent *event = self.goodEvents[index];
         NSMutableAttributedString *string = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n", event.name]];
         [string setFont:[UIFont boldSystemFontOfSize:self.titleSize]];
         [string setTextColor:self.titleColor];
         [attributedString appendAttributedString:string];
         if (event.good) {
-            string = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n\n", event.good]];
+            string = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n", event.good]];
             [string setFont:[UIFont boldSystemFontOfSize:self.subTitleSize]];
             [string setTextColor:self.subTitleColor];
             [attributedString appendAttributedString:string];
+            
+            /*
+            if (index != count-1) {
+                string = [NSMutableAttributedString attributedStringWithString:@"\n"];
+                [string setFont:[UIFont boldSystemFontOfSize:2]];
+                [attributedString appendAttributedString:string];
+            }
+             */
         }
     }
     
@@ -192,13 +201,14 @@
 - (NSAttributedString *)getBadAttributedString {
     NSMutableAttributedString *attributedString = [NSMutableAttributedString attributedStringWithString:@""];
     
-    for (AlmanacEvent *event in self.badEvents) {
+    for (NSInteger index = 0, count = [self.badEvents count]; index < count; index ++) {
+        AlmanacEvent *event = self.badEvents[index];
         NSMutableAttributedString *string = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n", event.name]];
         [string setFont:[UIFont boldSystemFontOfSize:self.titleSize]];
         [string setTextColor:self.titleColor];
         [attributedString appendAttributedString:string];
         if ([event.bad length]) {
-            string = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n\n", event.bad]];
+            string = [NSMutableAttributedString attributedStringWithString:[NSString stringWithFormat:@"%@\n", event.bad]];
             [string setFont:[UIFont boldSystemFontOfSize:self.subTitleSize]];
             [string setTextColor:self.subTitleColor];
             [attributedString appendAttributedString:string];

@@ -25,7 +25,8 @@
     static dispatch_once_t pred = 0;
     __strong static id _sharedObject = nil;
     dispatch_once(&pred, ^{
-        _sharedObject = [[self alloc] init];
+//        _sharedObject = [[self alloc] init];
+        //FIXME:暂时屏幕广告管理器
     });
     return _sharedObject;
 }

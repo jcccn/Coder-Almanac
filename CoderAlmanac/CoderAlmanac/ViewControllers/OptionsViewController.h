@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RETableViewManager/RETableViewManager.h>
+#import <RETableViewManager/RETableViewOptionsController.h>
 
-@interface OptionsViewController : UITableViewController {
+@interface OptionsViewController : UITableViewController <RETableViewManagerDelegate> {
     
 }
 

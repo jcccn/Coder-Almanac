@@ -14,6 +14,7 @@
 #import "MobClick.h"
 
 #import "AlmanacKit.h"
+#import "AlmanacHolder.h"
 #import "Constants.h"
 #import "OptionsViewController.h"
 
@@ -28,6 +29,7 @@
 @property (nonatomic, weak) IBOutlet OHAttributedLabel *badContentLabel;
 @property (nonatomic, weak) IBOutlet UILabel *otherInfoLabel;
 
+- (void)reloadAlmanac;
 - (IBAction)showMoreOptions:(id)sender;
 - (void)shareAlmanac;
 - (UIImage *)screenshot;
@@ -45,23 +47,6 @@
 	
     self.title = @"程序员老黄历";
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [[AlmanacKit sharedInstance] loadJson:[NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"data_normal_coder" ofType:@"json"]
-                                                                        encoding:NSUTF8StringEncoding
-                                                                           error:NULL]];
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            self.dateLabel.text = [[AlmanacKit sharedInstance] getTodayString];
-            self.goodContentLabel.centerVertically = YES;
-            self.goodContentLabel.attributedText = [[AlmanacKit sharedInstance] getGoodAttributedString];
-            self.badContentLabel.centerVertically = YES;
-            self.badContentLabel.attributedText = [[AlmanacKit sharedInstance] getBadAttributedString];
-            self.otherInfoLabel.text = [NSString stringWithFormat:@"%@\n%@\n%@",
-                                        [[AlmanacKit sharedInstance] getDirectionString],
-                                        [[AlmanacKit sharedInstance] getDrinkString],
-                                        [[AlmanacKit sharedInstance] getStarString]];
-        });
-    });
-    
     __weak __typeof(&*self) weakSelf = self;
     
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
@@ -73,6 +58,21 @@
                                                                                        [weakSelf shareAlmanac];
                                                                                    }];
     self.navigationItem.rightBarButtonItem = shareButton;
+    
+    self.goodContentLabel.centerVertically = YES;
+    self.badContentLabel.centerVertically = YES;
+    self.dateLabel.text = nil;
+    self.goodContentLabel.text = nil;
+    self.badContentLabel.text = nil;
+    self.otherInfoLabel.text = nil;
+    
+    [self reloadAlmanac];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadAlmanac:) name:kNotificationShouldReloadAlmanac object:nil];
+}
+
+- (void)reloadAlmanac:(NSNotification *)notification {
+    [self reloadAlmanac];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -89,6 +89,30 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)reloadAlmanac {
+    MBProgressHUD *hud = [MBProgressHUD HUDForView:self.view];
+    if (! hud) {
+        hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    }
+    hud.removeFromSuperViewOnHide = YES;
+    hud.detailsLabelText = @"正在占卜测算";
+    
+    __weak __typeof(&*self) weakSelf = self;
+    [hud showAnimated:YES
+  whileExecutingBlock:^{
+      [[AlmanacKit sharedInstance] loadJson:[[AlmanacHolder sharedInstance] currentJobJson]];
+    }
+      completionBlock:^{
+          weakSelf.dateLabel.text = [[AlmanacKit sharedInstance] getTodayString];
+          weakSelf.goodContentLabel.attributedText = [[AlmanacKit sharedInstance] getGoodAttributedString];
+          weakSelf.badContentLabel.attributedText = [[AlmanacKit sharedInstance] getBadAttributedString];
+          weakSelf.otherInfoLabel.text = [NSString stringWithFormat:@"%@\n%@\n%@",
+                                      [[AlmanacKit sharedInstance] getDirectionString],
+                                      [[AlmanacKit sharedInstance] getDrinkString],
+                                      [[AlmanacKit sharedInstance] getStarString]];
+      }];
 }
 
 - (IBAction)showMoreOptions:(id)sender {

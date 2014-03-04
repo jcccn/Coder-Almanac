@@ -57,6 +57,8 @@
 		908228CE18C0DF6600A8281D /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 908228CB18C0DF6600A8281D /* about.html */; };
 		908228CF18C0DF6600A8281D /* about_ad.html in Resources */ = {isa = PBXBuildFile; fileRef = 908228CC18C0DF6600A8281D /* about_ad.html */; };
 		908228D018C0DF6600A8281D /* faq.html in Resources */ = {isa = PBXBuildFile; fileRef = 908228CD18C0DF6600A8281D /* faq.html */; };
+		9086236118C61D0D0023E305 /* jobs_info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9086236018C61D0D0023E305 /* jobs_info.plist */; };
+		9086236418C61E000023E305 /* AlmanacHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9086236318C61E000023E305 /* AlmanacHolder.m */; };
 		90E377A918C4FABE00A81135 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E377A818C4FABE00A81135 /* Crashlytics.framework */; };
 		90EEBA3E18BB741400C0183D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EEBA3D18BB741400C0183D /* Foundation.framework */; };
 		90EEBA4018BB741400C0183D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90EEBA3F18BB741400C0183D /* CoreGraphics.framework */; };
@@ -171,6 +173,9 @@
 		908228CB18C0DF6600A8281D /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		908228CC18C0DF6600A8281D /* about_ad.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about_ad.html; sourceTree = "<group>"; };
 		908228CD18C0DF6600A8281D /* faq.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = faq.html; sourceTree = "<group>"; };
+		9086236018C61D0D0023E305 /* jobs_info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = jobs_info.plist; sourceTree = "<group>"; };
+		9086236218C61E000023E305 /* AlmanacHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlmanacHolder.h; sourceTree = "<group>"; };
+		9086236318C61E000023E305 /* AlmanacHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlmanacHolder.m; sourceTree = "<group>"; };
 		90E377A818C4FABE00A81135 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		90EEBA3A18BB741400C0183D /* CoderAlmanac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoderAlmanac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90EEBA3D18BB741400C0183D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -584,6 +589,7 @@
 			children = (
 				90EEBAB218BBAC8400C0183D /* data_female_coder.json */,
 				90EEBAB018BBAB1900C0183D /* data_normal_coder.json */,
+				9086236018C61D0D0023E305 /* jobs_info.plist */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -593,6 +599,8 @@
 			children = (
 				90F815BF18BE38BA007D943D /* AlmanacKit.h */,
 				90F815C018BE38BA007D943D /* AlmanacKit.m */,
+				9086236218C61E000023E305 /* AlmanacHolder.h */,
+				9086236318C61E000023E305 /* AlmanacHolder.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -708,6 +716,7 @@
 				90EEBA8918BB87DE00C0183D /* Icon-60.png in Resources */,
 				90EEBA8F18BB87DE00C0183D /* Icon-Small-50.png in Resources */,
 				90EEBA9118BB87DE00C0183D /* Icon-Small.png in Resources */,
+				9086236118C61D0D0023E305 /* jobs_info.plist in Resources */,
 				90EEBA8C18BB87DE00C0183D /* Icon-72@2x.png in Resources */,
 				90EEBA5418BB741400C0183D /* Main_iPad.storyboard in Resources */,
 				9082287A18C0C56C00A8281D /* ShareSDKLocalizable.strings in Resources */,
@@ -802,6 +811,7 @@
 				90F815C118BE38BA007D943D /* AlmanacKit.m in Sources */,
 				90F815BE18BE3875007D943D /* AlmanacViewController.m in Sources */,
 				90EEBA4E18BB741400C0183D /* AppDelegate.m in Sources */,
+				9086236418C61E000023E305 /* AlmanacHolder.m in Sources */,
 				908228C618C0DD8B00A8281D /* AboutViewController.m in Sources */,
 				90EEBA4A18BB741400C0183D /* main.m in Sources */,
 				908228C818C0DD8B00A8281D /* AboutAdViewController.m in Sources */,

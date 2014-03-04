@@ -11,6 +11,8 @@
 
 #define kShowedAdHint           @"showedAdHint"
 
+#define kNotificationShouldReloadAlmanac    @"ShouldReloadAlmanac"
+
 #define kForceConfigAd          @"forceConfigAd"
 #define kConfigAdOn             @"configAdOn"
 #define kConfigAdDateBegin      @"configAdDateBegin"

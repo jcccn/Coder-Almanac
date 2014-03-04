@@ -12,7 +12,6 @@
 #import <Appirater/Appirater.h>
 #import <BlocksKit/BlocksKit.h>
 #import <BlocksKit/BlocksKit+UIKit.h>
-#import <RETableViewManager/RETableViewManager.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 
 #import "FaqViewController.h"
@@ -20,6 +19,7 @@
 #import "AboutAdViewController.h"
 #import "Constants.h"
 #import "IAdManager.h"
+#import "AlmanacHolder.h"
 
 @interface OptionsViewController ()
 
@@ -27,7 +27,10 @@
 
 @property (nonatomic, strong) RETableViewManager *tableViewManager;
 
+@property (nonatomic, weak) RERadioItem *jobPickerItem;
 @property (nonatomic, weak) RETableViewItem *adSwitchItem;
+
+@property (nonatomic, assign) BOOL jobChanged;
 
 - (void)refreshAdSwitchState;
 
@@ -55,20 +58,34 @@
                                               bk_initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                               handler:^(id sender) {
                                                   [weakSelf.presentingViewController dismissViewControllerAnimated:YES completion:^{
-                                                      
+                                                      if (weakSelf.jobChanged) {
+                                                          [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationShouldReloadAlmanac object:self];
+                                                      }
                                                   }];
                                               }];
 
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     self.tableViewManager = [[RETableViewManager alloc] initWithTableView:self.tableView];
+    RERadioItem *jobPickerItem = [RERadioItem itemWithTitle:@"我是→_→" value:[[AlmanacHolder sharedInstance] currentJobTitle] selectionHandler:^(RERadioItem *item) {
+        [item deselectRowAnimated:YES];
+        NSArray *options = [[[AlmanacHolder sharedInstance] jobTitles] copy];
+        
+        RETableViewOptionsController *optionsController = [[RETableViewOptionsController alloc] initWithItem:item options:options multipleChoice:NO completionHandler:^{
+            [weakSelf.navigationController popViewControllerAnimated:YES];
+            
+            [item reloadRowWithAnimation:UITableViewRowAnimationNone];
+            
+            [AlmanacHolder sharedInstance].currentJobTitle = item.value;
+            weakSelf.jobChanged = YES;
+        }];
+        optionsController.delegate = weakSelf;
+        
+        [weakSelf.navigationController pushViewController:optionsController animated:YES];
+    }];
+    self.jobPickerItem = jobPickerItem;
     RETableViewSection *section = [RETableViewSection section];
-    [section addItem:[RETableViewItem itemWithTitle:@"我是程序媛"
-                                      accessoryType:UITableViewCellAccessoryDisclosureIndicator
-                                   selectionHandler:^(RETableViewItem *item) {
-                                       [item deselectRowAnimated:YES];
-                                       [weakSelf.presentingViewController dismissViewControllerAnimated:YES completion:NULL];
-                                   }]];
+    [section addItem:jobPickerItem];
     [self.tableViewManager addSection:section];
     
     section = [RETableViewSection section];
@@ -120,6 +137,8 @@
                                    }]];
     [self.tableViewManager addSection:section];
     
+    //FIXME:暂时屏幕广告管理器
+    /*
     RETableViewItem *adSwitchItem = [RETableViewItem itemWithTitle:@"🐎 关于万恶的广告"
                                                      accessoryType:UITableViewCellAccessoryDisclosureIndicator
                                                   selectionHandler:^(RETableViewItem *item) {
@@ -133,7 +152,7 @@
     section = [RETableViewSection section];
     [section addItem:adSwitchItem];
     [self.tableViewManager addSection:section];
-
+     */
 }
 
 - (void)viewWillAppear:(BOOL)animated {
