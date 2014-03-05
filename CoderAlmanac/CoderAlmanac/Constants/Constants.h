@@ -22,7 +22,7 @@
 #define AppStoreUrl             @"https://itunes.apple.com/cn/app/id830477488"
 #define AppStoreShortUrl        @"http://t.cn/8FBtKOx"
 
-#define UmengAppKey             @"senseforce.com"
+#define UmengAppKey             @"4ec672c55270150ffe000012"
 
 #define ShareSDKAppKey          @"1459116d4948"
 

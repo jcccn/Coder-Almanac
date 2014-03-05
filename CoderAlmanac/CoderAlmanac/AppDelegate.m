@@ -86,7 +86,9 @@
 #pragma mark - Private Metholds
 
 - (void)configUmeng {
+#if ( ! DEBUG)
     [MobClick startWithAppkey:UmengAppKey];
+#endif
     [MobClick setAppVersion:[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
     
     [MobClick checkUpdate];
