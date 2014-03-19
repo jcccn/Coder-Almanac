@@ -16,6 +16,8 @@
 
 + (instancetype)sharedInstance;
 
+- (void)setDate:(NSDate *)date;
+
 - (void)loadJson:(NSString *)jsonString;
 
 - (NSString *)getTodayString;

@@ -8,7 +8,7 @@
 
 #import "AlmanacKit.h"
 
-#import <JSONKit/JSONKit.h>
+#import "JSONKit.h"
 
 @interface AlmanacKit ()
 
@@ -85,6 +85,10 @@
     return self;
 }
 
+- (void)setDate:(NSDate *)date {
+    self.today = date;
+}
+
 - (void)loadJson:(NSString *)jsonString {
     
     [self clean];
@@ -94,7 +98,9 @@
         return;
     }
     
-    self.today = [NSDate date];
+    if ( ! self.today) {
+        self.today = [NSDate date];
+    }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy"];

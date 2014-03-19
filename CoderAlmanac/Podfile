@@ -6,8 +6,10 @@ pod 'MBProgressHUD'
 
 pod 'Appirater'
 
-pod 'JSONKit', :head
+pod 'JSONKit-NoWarning'
 
 pod 'RETableViewManager'
 
 pod 'OHAttributedLabel'
+
+pod 'TimesSquare', :head

@@ -17,8 +17,9 @@
 #import "AlmanacHolder.h"
 #import "Constants.h"
 #import "OptionsViewController.h"
+#import "CalViewController.h"
 
-@interface AlmanacViewController ()
+@interface AlmanacViewController () <CalViewControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet UILabel *dateLabel;
 @property (nonatomic, weak) IBOutlet UIView *goodView;
@@ -30,7 +31,9 @@
 @property (nonatomic, weak) IBOutlet UILabel *otherInfoLabel;
 
 - (void)reloadAlmanac;
+- (void)reloadAlmanacOnDate:(NSDate *)date;
 - (IBAction)showMoreOptions:(id)sender;
+- (void)showDailyCalPicker;
 - (void)shareAlmanac;
 - (UIImage *)screenshot;
 - (NSString *)screenshotAndSave;
@@ -57,7 +60,12 @@
                                                                                    handler:^(id sender) {
                                                                                        [weakSelf shareAlmanac];
                                                                                    }];
-    self.navigationItem.rightBarButtonItem = shareButton;
+    UIBarButtonItem *calButton = [[UIBarButtonItem alloc] bk_initWithTitle:@" 📅 "
+                                                                     style:UIBarButtonItemStylePlain
+                                                                   handler:^(id sender) {
+                                                                       [weakSelf showDailyCalPicker];
+                                                                   }];
+    self.navigationItem.rightBarButtonItems = @[shareButton, calButton];
     
     self.goodContentLabel.centerVertically = YES;
     self.badContentLabel.centerVertically = YES;
@@ -92,6 +100,10 @@
 }
 
 - (void)reloadAlmanac {
+    [self reloadAlmanacOnDate:[NSDate date]];
+}
+
+- (void)reloadAlmanacOnDate:(NSDate *)date {
     MBProgressHUD *hud = [MBProgressHUD HUDForView:self.view];
     if (! hud) {
         hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -102,16 +114,17 @@
     __weak __typeof(&*self) weakSelf = self;
     [hud showAnimated:YES
   whileExecutingBlock:^{
+      [[AlmanacKit sharedInstance] setDate:date];
       [[AlmanacKit sharedInstance] loadJson:[[AlmanacHolder sharedInstance] currentJobJson]];
-    }
+  }
       completionBlock:^{
           weakSelf.dateLabel.text = [[AlmanacKit sharedInstance] getTodayString];
           weakSelf.goodContentLabel.attributedText = [[AlmanacKit sharedInstance] getGoodAttributedString];
           weakSelf.badContentLabel.attributedText = [[AlmanacKit sharedInstance] getBadAttributedString];
           weakSelf.otherInfoLabel.text = [NSString stringWithFormat:@"%@\n%@\n%@",
-                                      [[AlmanacKit sharedInstance] getDirectionString],
-                                      [[AlmanacKit sharedInstance] getDrinkString],
-                                      [[AlmanacKit sharedInstance] getStarString]];
+                                          [[AlmanacKit sharedInstance] getDirectionString],
+                                          [[AlmanacKit sharedInstance] getDrinkString],
+                                          [[AlmanacKit sharedInstance] getStarString]];
       }];
 }
 
@@ -125,6 +138,24 @@
                          
                      }];
     
+}
+
+- (void)showDailyCalPicker {
+    CalViewController *calViewController = [[CalViewController alloc] init];
+    calViewController.delegate = self;
+    UINavigationController *calNavigationController = [[UINavigationController alloc] initWithRootViewController:calViewController];
+    calNavigationController.modalPresentationStyle = UIModalPresentationFormSheet;
+    __weak UINavigationController *weakNavigationController = calNavigationController;
+    calViewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
+                                                           bk_initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
+                                                           handler:^(id sender) {
+                                                               [weakNavigationController.presentingViewController dismissViewControllerAnimated:YES completion:^{
+                                                                   
+                                                               }];
+                                                           }];
+    [self presentViewController:calNavigationController
+                       animated:YES
+                     completion:NULL];
 }
 
 - (void)shareAlmanac {
@@ -217,5 +248,15 @@
         return nil;
     }
 }
+
+
+#pragma mark - CalViewControllerDelegate
+
+- (void)calDidSelectDate:(NSDate *)date {
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self reloadAlmanacOnDate:date];
+    }];
+}
+
 
 @end
