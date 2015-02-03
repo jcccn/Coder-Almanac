@@ -26,6 +26,7 @@
 @property (nonatomic, assign) NSArray *tools;
 @property (nonatomic, assign) NSArray *varNames;
 @property (nonatomic, assign) NSArray *drinks;
+@property (nonatomic, strong) NSString *target;
 
 @property (nonatomic, strong) NSMutableArray *goodEvents;
 @property (nonatomic, strong) NSMutableArray *badEvents;
@@ -148,6 +149,8 @@
     
     self.drinks = data[@"drinks"];
     
+    self.target = data[@"target"];
+    
     
     /**********  开始解析  *********/
     [self pickTodaysLuck];
@@ -237,7 +240,7 @@
 }
 
 - (NSString *)getStarString {
-    return [NSString stringWithFormat:@"女神亲近指数：%@", [self star:self.starResult]];
+    return [NSString stringWithFormat:@"%@亲近指数：%@", (self.target ? self.target : @"对象"), [self star:self.starResult]];
 }
 
 /*
