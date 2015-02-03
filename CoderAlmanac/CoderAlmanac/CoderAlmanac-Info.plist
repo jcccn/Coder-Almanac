@@ -46,11 +46,30 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.0</string>
+	<string>1.0.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string></string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wxe577d79c33cb28fe</string>
+				<string>QQ0605944F</string>
+				<string>wb2300527798</string>
+				<string>tencent101028943</string>
+				<string>wb801483015</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>LSHasLocalizedDisplayName</key>
 	<true/>
 	<key>LSRequiresIPhoneOS</key>
@@ -98,25 +117,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLName</key>
-			<string></string>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string></string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>wxe577d79c33cb28fe</string>
-				<string>QQ0605944F</string>
-				<string>wb2300527798</string>
-				<string>tencent101028943</string>
-				<string>wb801483015</string>
-			</array>
-		</dict>
 	</array>
 </dict>
 </plist>
