@@ -161,7 +161,7 @@
 }
 
 - (void)shareAlmanac {
-    NSString *content = [NSString stringWithFormat:@"今日%@ 下载「博客园新闻」看更多：%@ ", [[AlmanacKit sharedInstance] getStarString], AppStoreShortUrl];
+    NSString *content = [NSString stringWithFormat:@"今日%@ 下载「程序员老黄历」看更多：%@ ", [[AlmanacKit sharedInstance] getStarString], AppStoreShortUrl];
     
     id<ISSContent> publishContent = [ShareSDK content:content
                                        defaultContent:[@"程序员老黄历 " stringByAppendingFormat:@"%@", AppStoreShortUrl]
