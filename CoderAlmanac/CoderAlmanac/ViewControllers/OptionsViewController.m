@@ -71,12 +71,12 @@
         [item deselectRowAnimated:YES];
         NSArray *options = [[[AlmanacHolder sharedInstance] jobTitles] copy];
         
-        RETableViewOptionsController *optionsController = [[RETableViewOptionsController alloc] initWithItem:item options:options multipleChoice:NO completionHandler:^{
+        RETableViewOptionsController *optionsController = [[RETableViewOptionsController alloc] initWithItem:item options:options multipleChoice:NO completionHandler:^(RETableViewItem *item) {
             [weakSelf.navigationController popViewControllerAnimated:YES];
             
             [item reloadRowWithAnimation:UITableViewRowAnimationNone];
             
-            [AlmanacHolder sharedInstance].currentJobTitle = item.value;
+            [AlmanacHolder sharedInstance].currentJobTitle = item.title;
             weakSelf.jobChanged = YES;
         }];
         optionsController.delegate = weakSelf;

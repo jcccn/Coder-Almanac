@@ -1,9 +1,0 @@
-[submodule "CoderAlmanac/CoderAlmanac/External/ShareSDK"]
-	path = CoderAlmanac/CoderAlmanac/External/ShareSDK
-	url = https://github.com/jcccn/ShareSDK-iOS.git
-[submodule "CoderAlmanac/CoderAlmanac/External/UMeng-Analytics"]
-	path = CoderAlmanac/CoderAlmanac/External/UMeng-Analytics
-	url = https://github.com/jcccn/UMeng-Analytics-iOS.git
-[submodule "CoderAlmanac/CoderAlmanac/External/UMeng-Feedback"]
-	path = CoderAlmanac/CoderAlmanac/External/UMeng-Feedback
-	url = https://github.com/jcccn/UMeng-Feedback-iOS.git
