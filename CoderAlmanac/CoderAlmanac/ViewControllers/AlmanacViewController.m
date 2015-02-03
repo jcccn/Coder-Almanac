@@ -12,6 +12,8 @@
 #import <ShareSDK/ShareSDK.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "MobClick.h"
+#import <TencentOpenAPI/QQApiInterface.h>
+#import "WXApi.h"
 
 #import "AlmanacKit.h"
 #import "AlmanacHolder.h"
@@ -159,7 +161,7 @@
 }
 
 - (void)shareAlmanac {
-    NSString *content = [NSString stringWithFormat:@"今日%@ (来自【程序员老黄历】%@ ) ", [[AlmanacKit sharedInstance] getStarString], AppStoreShortUrl];
+    NSString *content = [NSString stringWithFormat:@"今日%@ 下载「博客园新闻」看更多：%@ ", [[AlmanacKit sharedInstance] getStarString], AppStoreShortUrl];
     
     id<ISSContent> publishContent = [ShareSDK content:content
                                        defaultContent:[@"程序员老黄历 " stringByAppendingFormat:@"%@", AppStoreShortUrl]
@@ -176,17 +178,20 @@
                                                authManagerViewDelegate:nil];
     [authOptions setPowerByHidden:YES];
     
-    NSArray *shareList = [ShareSDK getShareListWithType:
-                          ShareTypeSinaWeibo,
-                          ShareTypeTencentWeibo,
-                          ShareTypeWeixiTimeline,
-                          ShareTypeWeixiSession,
-                          ShareTypeQQSpace,
-                          ShareTypeQQ,
-                          ShareTypeMail,
-                          ShareTypeCopy,
-                          ShareTypeAirPrint,
-                          nil];
+    NSMutableArray *shareList = [NSMutableArray array];
+    [shareList addObjectsFromArray:[ShareSDK getShareListWithType:ShareTypeSinaWeibo, ShareTypeTencentWeibo, ShareTypeEvernote, nil]];
+    if ([WXApi isWXAppInstalled]) {
+        [shareList addObjectsFromArray:[ShareSDK getShareListWithType:ShareTypeWeixiTimeline, ShareTypeWeixiSession, ShareTypeWeixiFav, nil]];
+    }
+    if ([QQApiInterface isQQInstalled] || [QQApiInterface isQQSupportApi]) {
+        [shareList addObjectsFromArray:[ShareSDK getShareListWithType:ShareTypeQQ, ShareTypeQQSpace, nil]];
+    }
+    [shareList addObjectsFromArray:[ShareSDK getShareListWithType:
+                                    ShareTypePocket,
+                                    ShareTypeMail,
+                                    ShareTypeCopy,
+                                    ShareTypeAirPrint,nil]];
+    
     id<ISSShareOptions> shareOptions = [ShareSDK defaultShareOptionsWithTitle:@"程序员老黄历"
                                                               oneKeyShareList:shareList
                                                                qqButtonHidden:NO
