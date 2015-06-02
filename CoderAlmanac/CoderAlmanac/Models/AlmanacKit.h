@@ -48,6 +48,6 @@
 @property (nonatomic, assign) NSInteger date;
 @property (nonatomic, strong) NSString *type;
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *descriptionString;
 
 @end

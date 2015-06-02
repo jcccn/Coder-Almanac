@@ -137,7 +137,7 @@
             event.date = [special[@"date"] integerValue];
             event.type = [special[@"type"] copy];
             event.name = [special[@"name"] copy];
-            event.description = [special[@"description"] copy];
+            event.descriptionString = [special[@"description"] copy];
             [specials addObject:event];
         }
     }
@@ -333,14 +333,14 @@
 				specialSize[0] = @([specialSize[0] integerValue] + 1);
                 AlmanacEvent *event = [[AlmanacEvent alloc] init];
                 event.name = [special.name copy];
-                event.good = [special.description copy];
+                event.good = [special.descriptionString copy];
                 [self addToGood:event];
 			}
             else {
                 specialSize[1] = @([specialSize[1] integerValue] + 1);
                 AlmanacEvent *event = [[AlmanacEvent alloc] init];
                 event.name = [special.name copy];
-                event.good = [special.description copy];
+                event.good = [special.descriptionString copy];
                 [self addToBad:event];
 			}
 		}
@@ -392,7 +392,7 @@
 	}
 	
 	if ([result.name rangeOfString:@"%l"].location != NSNotFound) {
-        result.name = [result.name stringByReplacingOccurrencesOfString:@"%l" withString:[NSString stringWithFormat:@"%d", [self randomWithDay:self.iday index:12] % 247 + 30]];
+        result.name = [result.name stringByReplacingOccurrencesOfString:@"%l" withString:[NSString stringWithFormat:@"%ld", [self randomWithDay:self.iday index:12] % 247 + 30]];
 	}
 	
 	return result;

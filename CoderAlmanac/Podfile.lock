@@ -1,5 +1,5 @@
 PODS:
-  - Appirater (2.0.4)
+  - Appirater (2.0.5)
   - BlocksKit (2.2.5):
     - BlocksKit/All (= 2.2.5)
   - BlocksKit/All (2.2.5):
@@ -16,71 +16,50 @@ PODS:
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
   - JSONKit-NoWarning (1.2)
-  - MBProgressHUD (0.9)
+  - MBProgressHUD (0.9.1)
   - OHAttributedLabel (3.5.5)
   - REFormattedNumberField (1.1.5)
   - RETableViewManager (1.5.14):
     - REFormattedNumberField (~> 1.1.5)
     - REValidation (~> 0.1.4)
   - REValidation (0.1.4)
-  - ShareSDK/Copy (2.10.5):
+  - ShareSDK (2.11.0):
+    - ShareSDK/Normal (= 2.11.0)
+  - ShareSDK/Copy (2.11.0):
     - ShareSDK/Core
-  - ShareSDK/Core (2.10.5)
-  - ShareSDK/EverNote (2.10.5):
+  - ShareSDK/Core (2.11.0)
+  - ShareSDK/EverNote (2.11.0):
     - ShareSDK/Core
-  - ShareSDK/Lite (2.10.5):
+  - ShareSDK/Frequent (2.11.0):
     - ShareSDK/Copy
     - ShareSDK/Mail
     - ShareSDK/QQConnect
     - ShareSDK/QZone
-    - ShareSDK/WeChat
-    - ShareSDK/Weibo
-  - ShareSDK/Mail (2.10.5):
-    - ShareSDK/Core
-  - ShareSDK/Normal (2.10.5):
-    - ShareSDK/EverNote
-    - ShareSDK/Lite
-    - ShareSDK/Pocket
-    - ShareSDK/YouDaoNote
-  - ShareSDK/Pocket (2.10.5):
-    - ShareSDK/Core
-  - ShareSDK/QQConnect (2.10.5):
-    - ShareSDK/Core
-  - ShareSDK/QZone (2.10.5):
-    - ShareSDK/Core
-  - ShareSDK/SinaWeibo (2.10.5):
-    - ShareSDK/Core
-  - ShareSDK/TencentWeibo (2.10.5):
-    - ShareSDK/Core
-  - ShareSDK/UI (2.10.5):
-    - ShareSDK/UI/Full (= 2.10.5)
-  - ShareSDK/UI/Flat (2.10.5)
-  - ShareSDK/UI/Full (2.10.5):
-    - ShareSDK/UI/Flat
-    - ShareSDK/UI/iPadDefault
-    - ShareSDK/UI/iPadSimple
-    - ShareSDK/UI/iPhoneAppRecommend
-    - ShareSDK/UI/iPhoneDefault
-    - ShareSDK/UI/iPhoneSimple
-    - ShareSDK/UI/ShareActionSheet
-  - ShareSDK/UI/iPadDefault (2.10.5)
-  - ShareSDK/UI/iPadSimple (2.10.5)
-  - ShareSDK/UI/iPhoneAppRecommend (2.10.5)
-  - ShareSDK/UI/iPhoneDefault (2.10.5)
-  - ShareSDK/UI/iPhoneSimple (2.10.5)
-  - ShareSDK/UI/ShareActionSheet (2.10.5)
-  - ShareSDK/WeChat (2.10.5):
-    - ShareSDK/Core
-  - ShareSDK/Weibo (2.10.5):
-    - ShareSDK/Core
     - ShareSDK/SinaWeibo
-    - ShareSDK/TencentWeibo
-    - ShareSDK/UI
-  - ShareSDK/YouDaoNote (2.10.5):
+    - ShareSDK/UI/Flat
+    - ShareSDK/UI/ShareActionSheet
+    - ShareSDK/WeChat
+  - ShareSDK/Mail (2.11.0):
+    - ShareSDK/Core
+  - ShareSDK/Normal (2.11.0):
+    - ShareSDK/EverNote
+    - ShareSDK/Frequent
+    - ShareSDK/Pocket
+  - ShareSDK/Pocket (2.11.0):
+    - ShareSDK/Core
+  - ShareSDK/QQConnect (2.11.0):
+    - ShareSDK/Core
+  - ShareSDK/QZone (2.11.0):
+    - ShareSDK/QQConnect
+  - ShareSDK/SinaWeibo (2.11.0):
+    - ShareSDK/Core
+  - ShareSDK/UI/Flat (2.11.0)
+  - ShareSDK/UI/ShareActionSheet (2.11.0)
+  - ShareSDK/WeChat (2.11.0):
     - ShareSDK/Core
   - TimesSquare (HEAD based on 1.0.1)
-  - UMAnalytics (3.1.9)
-  - UMFeedback (2.1)
+  - UMAnalytics (3.5.9)
+  - UMFeedback (2.1.1)
 
 DEPENDENCIES:
   - Appirater
@@ -88,43 +67,24 @@ DEPENDENCIES:
   - JSONKit-NoWarning
   - MBProgressHUD
   - OHAttributedLabel
-  - RETableViewManager
-  - ShareSDK/Normal (from `https://github.com/jcccn/ShareSDK-iOS.git`)
+  - RETableViewManager (~> 1.5.14)
+  - ShareSDK
   - TimesSquare (HEAD)
-  - UMAnalytics (from `https://github.com/jcccn/UMeng-Analytics-iOS.git`)
-  - UMFeedback (from `https://github.com/jcccn/UMeng-Feedback-iOS.git`)
-
-EXTERNAL SOURCES:
-  ShareSDK:
-    :git: https://github.com/jcccn/ShareSDK-iOS.git
-  UMAnalytics:
-    :git: https://github.com/jcccn/UMeng-Analytics-iOS.git
-  UMFeedback:
-    :git: https://github.com/jcccn/UMeng-Feedback-iOS.git
-
-CHECKOUT OPTIONS:
-  ShareSDK:
-    :commit: 96cbf03af9928ad7075d72183192aa4cbc53c392
-    :git: https://github.com/jcccn/ShareSDK-iOS.git
-  UMAnalytics:
-    :commit: 88dede0d3d98e581739d54d9779a03874b09779b
-    :git: https://github.com/jcccn/UMeng-Analytics-iOS.git
-  UMFeedback:
-    :commit: 002716df9406f3bbe56c7bf2cce60f142a90ed22
-    :git: https://github.com/jcccn/UMeng-Feedback-iOS.git
+  - UMAnalytics
+  - UMFeedback
 
 SPEC CHECKSUMS:
-  Appirater: cbdb7f305562cfde585300bfff86da01ae559deb
-  BlocksKit: 4439e7f30a9f90743462ca63545a15c1f4304cef
-  JSONKit-NoWarning: fc8d6dd8ec65e303867d1bd274632fc60a4a8ab9
-  MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
-  OHAttributedLabel: 733b32053cd02be1044749d394e874143e41e8d7
-  REFormattedNumberField: 86318c549b60130a6d7a05abebb142f08f671319
-  RETableViewManager: 62cab967dd2d24545283cf4751e94c222268533a
-  REValidation: a0033a582415848854e875dfcbe69c107de19f81
-  ShareSDK: b0f128dd1bd5686456220b4c1b986f80eec843fa
-  TimesSquare: 0cc058ccac868ec2da317950a0a6c70210edb85a
-  UMAnalytics: adfc8e3556403cb3470f275e4793c87dc3c53b6d
-  UMFeedback: 64911b9038ba07e5a004efc935d4893465c1af7f
+  Appirater: e7c0a47fb67ee5041ce8479e6ba960927fb40264
+  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  JSONKit-NoWarning: 3d27e6f9e6846ecf741e8c64dcadd7d5aa7193cb
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  OHAttributedLabel: 9b2eb99323dee6b3a81ef3bc8e98b084117bca2d
+  REFormattedNumberField: be3d55dd709f65541fb26b7e1709da07903147f8
+  RETableViewManager: 317f43f31c0a5818c6257cb7544167819a8ae170
+  REValidation: 38c4de1be58455f8b00aab208ac80db316a66b7f
+  ShareSDK: 9dfac7cb9a4cafdfa060cb9989dfdc94c8fa7540
+  TimesSquare: ffb4fc1456a8121d6bb33d92e640e47bc0e0384b
+  UMAnalytics: 8c24fb67541ca9621337668dc08167e716cb6224
+  UMFeedback: 7f9e82d5bd86223f7b7f8b7a0215b896ba2357fd
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.37.2
